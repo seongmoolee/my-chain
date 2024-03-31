@@ -25,16 +25,13 @@ export default function Header({
   blockHeight,
 }: HeaderProps) {
   return (
-    <div className="flex items-center justify-between border-b p-2 shadow-sm">
+    <div className="flex items-center justify-between p-2">
       <div className="container flex">
         <div className="flex basis-6/12 items-center justify-start">
-          <Image className="h-8 w-8" src={protokit} alt={"Protokit logo"} />
-          <Separator className="mx-4 h-8" orientation={"vertical"} />
-          <div className="flex grow">
-            <Chain height={blockHeight} />
-          </div>
+          <a href="/">ZK_Insurance</a>
         </div>
         <div className="flex basis-6/12 flex-row items-center justify-end">
+          {wallet ? <div><a href="/reg">마이페이지</a></div> : <></> }
           {/* balance */}
           {wallet && (
             <div className="mr-4 flex shrink flex-col items-end justify-center">
